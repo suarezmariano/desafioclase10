@@ -1,0 +1,28 @@
+<style type="text/css">
+  table,
+  th,
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+</style>
+<% if(productos.length !==0) { %>
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Thumbnail</th>
+    </tr>
+    <% for (const producto in productos) {%>
+    <tr>
+      <td><%= productos[producto].title %></td>
+      <td><%= productos[producto].price %></td>
+      <td><%= productos[producto].thumbnail %></td>
+    </tr>
+    <% } %>
+  </table>
+</div>
+<% } else{ %>
+<p>No hay productos cargados</p>
+<% }%>
