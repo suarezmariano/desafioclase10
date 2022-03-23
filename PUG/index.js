@@ -13,3 +13,10 @@ const server = app.listen(port, () => {
   console.log('Servidor corriendo en el puerto: ' + port);
 });
 server.on('error', (error) => console.log(`hubo un error ${error}`));
+
+app.set('views', './views');
+app.set('view engine', 'pug');
+
+app.get('/', (req, res) => {
+  res.render('formulario');
+});
