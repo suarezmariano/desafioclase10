@@ -18,5 +18,10 @@ app.set('views', './views');
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-  res.render('formulario');
+  res.render('formulario', { productos });
+});
+
+app.post('/productos', (req, res) => {
+  productos.push(req.body);
+  res.render('formulario', { productos });
 });

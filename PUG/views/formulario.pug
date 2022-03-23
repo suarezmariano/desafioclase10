@@ -1,5 +1,35 @@
+-const productos
+
 html
     head
         title="Productos PUG"
     body
-        
+        div
+            h1 Cargar Producto 
+            form
+                label Title: 
+                input(type="text" name="title" required)
+                br
+                label Price: 
+                input(type="number" name="price" required)
+                br
+                label Thumbnail: 
+                input(type="text" name="thumbnail" required)
+                br
+                button Cargar Producto
+        if productos.length !== 0
+            div 
+                table(style={border: "1px solid black"})
+                    tr(style={border: "1px solid black"})
+                        th(style={border: "1px solid black"})  Title 
+                        th(style={border: "1px solid black"})  Price 
+                        th(style={border: "1px solid black"})  Thumbnail
+                    each producto in productos
+                    tr(style={border: "1px solid black"})
+                        td(style={border: "1px solid black"})  producto.title 
+                        td(style={border: "1px solid black"})  productos.price 
+                        td(style={border: "1px solid black"})  productos.thumbnail
+        else
+            p No hay productos cargados
+    footer 
+        h3 Desarrolado por Mariano Suarez - 2022
