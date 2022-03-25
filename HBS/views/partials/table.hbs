@@ -1,0 +1,18 @@
+{{#if productos.length !==0}}
+<div>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Thumbnail</th>
+    </tr>
+    {{#each producto}}
+    <tr>
+      <td><%= this.title %></td>
+      <td><%= this.price %></td>
+      <td><%= this.thumbnail %></td>
+    </tr>
+    {{/each}}
+    </table>
+</div>
+{{/if}}
