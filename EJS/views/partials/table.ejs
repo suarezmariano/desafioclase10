@@ -18,7 +18,10 @@
     <tr>
       <td><%= productos[producto].title %></td>
       <td><%= productos[producto].price %></td>
-      <td><%= productos[producto].thumbnail %></td>
+      <td>
+        <img src="<%= productos[producto].thumbnail %>" /><%
+        productos[producto].thumbnail %>
+      </td>
     </tr>
     <% } %>
   </table>
