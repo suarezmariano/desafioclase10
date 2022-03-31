@@ -1,8 +1,5 @@
--const productos
-
 html
-    head
-        title="Productos PUG"
+    include partials/header.pug
     body
         div
             h1 Cargar Producto 
@@ -17,19 +14,7 @@ html
                 input(type="text" name="thumbnail" required)
                 br
                 button Cargar Producto
-        if productos.length !== 0
-            div 
-                table(style={border: "1px solid black"})
-                    tr(style={border: "1px solid black"})
-                        th(style={border: "1px solid black"})  Title 
-                        th(style={border: "1px solid black"})  Price 
-                        th(style={border: "1px solid black"})  Thumbnail
-                    each producto in productos
-                        tr(style={border: "1px solid black"})
-                            td(style={border: "1px solid black"})  producto.title 
-                            td(style={border: "1px solid black"})  productos.price 
-                            td(style={border: "1px solid black"})  productos.thumbnail
-        else
-            p No hay productos cargados
-    footer 
-        h3 Desarrolado por Mariano Suarez - 2022
+
+        h3 Para ver todos los productos haga click 
+            a(href='/productos') aquí
+    include partials/footer.pug
