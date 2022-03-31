@@ -17,10 +17,14 @@ server.on('error', (error) => console.log(`hubo un error ${error}`));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('formulario', { productos });
+  res.render('formulario');
 });
 
 app.post('/productos', (req, res) => {
   productos.push(req.body);
-  res.render('formulario', { productos });
+  res.render('formulario');
+});
+
+app.get('/productos', (req, res) => {
+  res.render('productos', { productos });
 });
