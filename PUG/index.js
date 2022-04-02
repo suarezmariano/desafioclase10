@@ -4,6 +4,7 @@ const app = express();
 const router = express.Router();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
 const productos = [];
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.post('/productos', (req, res) => {
   productos.push(req.body);
+  console.log(productos);
   res.render('formulario');
 });
 
