@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-const router = express.Router();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
@@ -24,7 +23,7 @@ app.get('/', (req, res) => {
 
 app.post('/productos', (req, res) => {
   productos.push(req.body);
-  console.log(productos);
+  console.log('Producto cargado!');
   res.render('formulario');
 });
 
