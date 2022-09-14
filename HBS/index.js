@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
-const handlebars = require('express-handlebars');
+const { engine } = require('express-handlebars');
 
-const router = express.Router();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -15,20 +14,12 @@ const server = app.listen(port, () => {
 });
 server.on('error', (error) => console.log(`hubo un error ${error}`));
 
-app.engine(
-  'hbs',
-  engine({
-    extname: '.hbs',
-    defaultLayout: 'index.hbs',
-    layoutsDir: './views/layouts',
-    partialsDir: './views/patials',
-  })
-);
-app.set('view engine', 'hbs');
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.get('/', (req, res) => {
-  res.render('formulario', { productos });
+  res.render('main', { productos });
 });
 
 app.post('/productos', (req, res) => {
